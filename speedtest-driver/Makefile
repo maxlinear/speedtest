@@ -24,6 +24,7 @@ define KernelPackage/$(PKG_NAME)
 	TITLE:=Speed test kernel driver
 	KCONFIG:=CONFIG_SPEEDTEST_DRIVER=m
 	FILES:=$(PKG_BUILD_DIR)/speedtest.ko
+	AUTOLOAD:=$(call AutoLoad,98,speedtest)
 	URL:=http://www.maxlinear.com
 	MAINTAINER:=MaxLinear Inc
 	DEPENDS:=@TARGET_intel_x86_lgm||TARGET_intel_mips +libkeyutils +keyutils +kmod-dnsresolver
